@@ -3,85 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 南橫 115cc 機車一日遊行程表</title>
+    <title>2026 南橫熱血之旅 - 數位路書</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 20px auto; padding: 0 10px; }
-        h2 { color: #2c3e50; border-left: 5px solid #27ae60; padding-left: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        th { background-color: #27ae60; color: white; text-align: left; padding: 12px; }
-        td { border: 1px solid #ddd; padding: 12px; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        .time { font-weight: bold; color: #e67e22; white-space: nowrap; }
-        .location { font-weight: bold; color: #2980b9; }
-        .highlight { color: #c0392b; font-weight: bold; }
+        :root {
+            --primary-color: #27ae60;
+            --secondary-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+        body { 
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: var(--bg-color);
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .section {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        h2 { 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        /* 行程表樣式 */
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: #eee; text-align: left; padding: 12px; }
+        td { border-bottom: 1px solid #eee; padding: 12px; }
+        .time { font-weight: bold; color: var(--secondary-color); width: 80px; }
+        .map-link { 
+            display: inline-block;
+            margin-top: 5px;
+            padding: 2px 8px;
+            background: #ebf5ee;
+            color: #27ae60;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        /* 清單樣式 */
+        .check-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        input[type="checkbox"] { margin-right: 10px; width: 18px; height: 18px; }
+        
+        /* 圖片樣式 */
+        .trip-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-top: 10px;
+        }
+        .footer-note { text-align: center; font-size: 0.9em; color: #777; margin-top: 30px; }
     </style>
 </head>
 <body>
 
-    <h2>🛵 2026/01/31 (初三) 南橫熱血行程表</h2>
-    <p><strong>交通工具：</strong> SYM Woo 115 (蘋果綠 / 白色後行李箱)</p>
+<header>
+    <h1>2026 南橫熱血之旅 (初三版)</h1>
+    <p>機車：SYM Woo 115 (蘋果綠) | 出發時間：06:00</p>
+</header>
 
+<div class="section">
+    <h2>📍 詳細行程與導航</h2>
     <table>
-        <thead>
-            <tr>
-                <th>時間</th>
-                <th>地點</th>
-                <th>行程重點與美食</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="time">06:00</td>
-                <td class="location">高雄榮總 (KVGH)</td>
-                <td>熱血出發！走台 22 線避開國 10 車潮。</td>
-            </tr>
-            <tr>
-                <td class="time">07:10</td>
-                <td class="location">甲仙區 (加油站)</td>
-                <td><span class="highlight">重要加油點</span>。享用芋頭早點，此時無需排隊。</td>
-            </tr>
-            <tr>
-                <td class="time">08:15</td>
-                <td class="location">寶來 / 荖濃</td>
-                <td>穩定巡航。山區氣溫開始下降，注意保暖。</td>
-            </tr>
-            <tr>
-                <td class="time">09:00</td>
-                <td class="location">梅山口管制站</td>
-                <td>第一批進場，避開後續遊覽車大軍。</td>
-            </tr>
-            <tr>
-                <td class="time">10:15</td>
-                <td class="location">中之關步道</td>
-                <td>漫步雲霧森林，享受清晨山林的芬多精。</td>
-            </tr>
-            <tr>
-                <td class="time">11:30</td>
-                <td class="location">埡口 (大關山隧道)</td>
-                <td>海拔 2722m 觀賞雲海。115cc 爬坡終點。</td>
-            </tr>
-            <tr>
-                <td class="time">12:30</td>
-                <td class="location">向陽遊樂區 (折返)</td>
-                <td>完成壯舉，準備回程。下坡務必注意煞車熱衰竭。</td>
-            </tr>
-            <tr>
-                <td class="time">13:30</td>
-                <td class="location">梅山部落用餐</td>
-                <td>品嚐<span class="highlight">原民烤肉</span>或熱湯，避開中午尖峰。</td>
-            </tr>
-            <tr>
-                <td class="time">15:00</td>
-                <td class="location">旗山老街</td>
-                <td>順訪老街，買伴手禮並稍作休息。</td>
-            </tr>
-            <tr>
-                <td class="time">17:00</td>
-                <td class="location">高雄榮總</td>
-                <td>平安抵達。總結行程與 Woo 115 絕佳戰績。</td>
-            </tr>
-        </tbody>
+        <tr>
+            <td class="time">06:00</td>
+            <td>
+                <strong>高雄榮總出發</strong><br>
+                走台 22 線避開國 10 車潮。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=高雄榮總" target="_blank" class="map-link">🌐 地圖導航</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="time">07:10</td>
+            <td>
+                <strong>甲仙區 (重要補給)</strong><br>
+                在此加滿油並享用芋頭早點。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=中油甲仙站" target="_blank" class="map-link">🌐 地圖導航</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="time">09:00</td>
+            <td>
+                <strong>梅山口管制站</strong><br>
+                準備進入南橫精華段，確認保暖衣物。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=梅山口遊客中心" target="_blank" class="map-link">🌐 地圖導航</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="time">11:30</td>
+            <td>
+                <strong>埡口 (大關山隧道)</strong><br>
+                最高點觀賞雲海，海拔 2722m。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=大關山隧道" target="_blank" class="map-link">🌐 地圖導航</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="time">13:30</td>
+            <td>
+                <strong>梅山部落 (午餐)</strong><br>
+                享用布農族原民美食。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=梅山部落" target="_blank" class="map-link">🌐 地圖導航</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="time">17:00</td>
+            <td>
+                <strong>高雄榮總</strong><br>
+                平安返家。
+            </td>
+        </tr>
     </table>
+</div>
+
+<div class="section">
+    <h2>📋 出發準備清單 (Checklist)</h2>
+    <div class="check-item"><input type="checkbox"> 補胎五件組 (鑽孔錐、膠條、小刀等)</div>
+    <div class="check-item"><input type="checkbox"> 行動電動打氣機 (確保電力充足)</div>
+    <div class="check-item"><input type="checkbox"> 基礎工具 (螺絲起子、10/12mm 板手)</div>
+    <div class="check-item"><input type="checkbox"> 防風防水外套 + 輕便羽絨衣</div>
+    <div class="check-item"><input type="checkbox"> 長版防風手套 + 脖圍</div>
+    <div class="check-item"><input type="checkbox"> 兩件式雨衣</div>
+    <div class="check-item"><input type="checkbox"> 行動電源 & 充電線</div>
+    <div class="check-item"><input type="checkbox"> Google Maps 離線地圖下載</div>
+    <div class="check-item"><input type="checkbox"> 緊急高熱量乾糧 (巧克力)</div>
+    <div class="check-item"><input type="checkbox"> 車輛檢查：Woo 115 胎紋 & 煞車調整</div>
+</div>
+
+<div class="section">
+    <h2>🖼️ 旅遊計畫概覽圖</h2>
+    <img src="https://github.com/user-attachments/assets/a6503acc-6710-47db-b3d0-bf0c20b18883" alt="2026南橫計畫圖" class="trip-image">
+</div>
+
+<div class="footer-note">
+    <p>※ 溫馨提醒：初三車多，請保持安全車距並隨時注意山區天候變化。</p>
+</div>
 
 </body>
 </html>
