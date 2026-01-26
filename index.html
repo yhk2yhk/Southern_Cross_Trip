@@ -8,6 +8,8 @@
         :root {
             --primary-color: #27ae60;
             --secondary-color: #e67e22;
+            --danger-color: #c0392b;
+            --info-color: #2980b9;
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
         }
@@ -22,140 +24,162 @@
         }
         header {
             text-align: center;
-            padding: 20px;
-            background: var(--primary-color);
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary-color), #1e8449);
             color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .section {
             background: var(--card-bg);
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 25px;
         }
         h2 { 
             color: var(--primary-color); 
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
             margin-top: 0;
+            font-size: 1.4em;
         }
-        /* 行程表樣式 */
+        .warning-box {
+            background-color: #fff3f3;
+            border: 2px solid var(--danger-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: var(--danger-color);
+            text-align: center;
+        }
+        /* 快速連結按鈕 */
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: var(--info-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #1a5276; }
+
+        /* 行程表 */
         table { width: 100%; border-collapse: collapse; }
-        th { background-color: #eee; text-align: left; padding: 12px; }
-        td { border-bottom: 1px solid #eee; padding: 12px; }
-        .time { font-weight: bold; color: var(--secondary-color); width: 80px; }
+        .time { font-weight: bold; color: var(--secondary-color); width: 75px; vertical-align: top; padding: 12px 0; }
+        .content { padding: 12px 0 12px 10px; border-bottom: 1px solid #eee; }
         .map-link { 
             display: inline-block;
             margin-top: 5px;
-            padding: 2px 8px;
-            background: #ebf5ee;
-            color: #27ae60;
+            color: var(--info-color);
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.85em;
+            font-size: 0.9em;
+            font-weight: bold;
         }
-        /* 清單樣式 */
-        .check-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        input[type="checkbox"] { margin-right: 10px; width: 18px; height: 18px; }
+        /* 清單 */
+        .check-item { display: flex; align-items: center; margin-bottom: 10px; font-size: 1.05em; }
+        input[type="checkbox"] { margin-right: 12px; width: 20px; height: 20px; cursor: pointer; }
         
-        /* 圖片樣式 */
-        .trip-image {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            margin-top: 10px;
-        }
-        .footer-note { text-align: center; font-size: 0.9em; color: #777; margin-top: 30px; }
+        .trip-image { width: 100%; border-radius: 12px; margin-top: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        footer { text-align: center; color: #888; font-size: 0.85em; margin-top: 40px; padding-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>2026 南橫熱血之旅 (初三版)</h1>
-    <p>機車：SYM Woo 115 (蘋果綠) | 出發時間：06:00</p>
+    <h1>2026 南橫熱血之旅</h1>
+    <p>車款：SYM Woo 115 (蘋果綠) | 日期：2026/01/31 (初三)</p>
 </header>
 
+<div class="warning-box">
+    <strong>⛽ 絕對指令：梅蘭加油站是入山前最後補給點！</strong><br>
+    Woo 115 油箱較小，請務必在此加滿，避免在高海拔山區顧路。
+</div>
+
 <div class="section">
-    <h2>📍 詳細行程與導航</h2>
+    <h2>即時資訊查詢</h2>
+    <div class="btn-group">
+        <a href="https://168.thb.gov.tw/" target="_blank" class="btn">🛣️ 公路總局即時路況</a>
+        <a href="https://www.cwa.gov.tw/V8/C/W/County/County.html?CID=64023" target="_blank" class="btn">🌤️ 高雄山區天氣預報</a>
+    </div>
+    <div class="btn-group">
+        <a href="https://khh.travel/zh-tw/event/news" target="_blank" class="btn">📢 高雄觀光局最新消息</a>
+        <a href="https://mobile.cwa.gov.tw/V8/M/W/OBS_Radar.htm" target="_blank" class="btn">📡 即時雷達回波圖</a>
+    </div>
+</div>
+
+<div class="section">
+    <h2>行程計畫軸</h2>
     <table>
         <tr>
             <td class="time">06:00</td>
-            <td>
+            <td class="content">
                 <strong>高雄榮總出發</strong><br>
-                走台 22 線避開國 10 車潮。<br>
-                <a href="https://www.google.com/maps/search/?api=1&query=高雄榮總" target="_blank" class="map-link">🌐 地圖導航</a>
+                清晨體感溫度低，請穿著防風外套。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=高雄榮民總醫院" target="_blank" class="map-link">📍 地圖導航</a>
             </td>
         </tr>
         <tr>
             <td class="time">07:10</td>
-            <td>
-                <strong>甲仙區 (重要補給)</strong><br>
-                在此加滿油並享用芋頭早點。<br>
-                <a href="https://www.google.com/maps/search/?api=1&query=中油甲仙站" target="_blank" class="map-link">🌐 地圖導航</a>
+            <td class="content"><strong>甲仙區</strong> (吃早點、短暫休整)</td>
+        </tr>
+        <tr>
+            <td class="time">08:45</td>
+            <td class="content">
+                <strong style="color:var(--danger-color);">梅蘭加油站 [必停點]</strong><br>
+                <strong>最後補給！</strong> 錯過將無法完成行程。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=中油梅蘭站" target="_blank" class="map-link">📍 地圖導航</a>
             </td>
         </tr>
         <tr>
-            <td class="time">09:00</td>
-            <td>
-                <strong>梅山口管制站</strong><br>
-                準備進入南橫精華段，確認保暖衣物。<br>
-                <a href="https://www.google.com/maps/search/?api=1&query=梅山口遊客中心" target="_blank" class="map-link">🌐 地圖導航</a>
-            </td>
+            <td class="time">09:15</td>
+            <td class="content"><strong>梅山口管制站</strong> (準時入山)</td>
         </tr>
         <tr>
             <td class="time">11:30</td>
-            <td>
-                <strong>埡口 (大關山隧道)</strong><br>
-                最高點觀賞雲海，海拔 2722m。<br>
-                <a href="https://www.google.com/maps/search/?api=1&query=大關山隧道" target="_blank" class="map-link">🌐 地圖導航</a>
+            <td class="content">
+                <strong>埡口 (雲海觀賞)</strong><br>
+                拍照熱點，注意高海拔稀薄氧氣。<br>
+                <a href="https://www.google.com/maps/search/?api=1&query=南橫埡口" target="_blank" class="map-link">📍 地圖導航</a>
             </td>
         </tr>
         <tr>
             <td class="time">13:30</td>
-            <td>
-                <strong>梅山部落 (午餐)</strong><br>
-                享用布農族原民美食。<br>
-                <a href="https://www.google.com/maps/search/?api=1&query=梅山部落" target="_blank" class="map-link">🌐 地圖導航</a>
-            </td>
+            <td class="content"><strong>梅山部落 (午餐)</strong></td>
         </tr>
         <tr>
             <td class="time">17:00</td>
-            <td>
-                <strong>高雄榮總</strong><br>
-                平安返家。
-            </td>
+            <td class="content"><strong>高雄榮總</strong> (平安抵達)</td>
         </tr>
     </table>
 </div>
 
 <div class="section">
-    <h2>📋 出發準備清單 (Checklist)</h2>
-    <div class="check-item"><input type="checkbox"> 補胎五件組 (鑽孔錐、膠條、小刀等)</div>
-    <div class="check-item"><input type="checkbox"> 行動電動打氣機 (確保電力充足)</div>
-    <div class="check-item"><input type="checkbox"> 基礎工具 (螺絲起子、10/12mm 板手)</div>
+    <h2>物品準備清單</h2>
+    <div class="check-item"><input type="checkbox"> 簡易補胎組 (鑽孔錐、膠條、膠水)</div>
+    <div class="check-item"><input type="checkbox"> 行動電動打氣機 (檢查電力)</div>
     <div class="check-item"><input type="checkbox"> 防風防水外套 + 輕便羽絨衣</div>
     <div class="check-item"><input type="checkbox"> 長版防風手套 + 脖圍</div>
-    <div class="check-item"><input type="checkbox"> 兩件式雨衣</div>
-    <div class="check-item"><input type="checkbox"> 行動電源 & 充電線</div>
-    <div class="check-item"><input type="checkbox"> Google Maps 離線地圖下載</div>
-    <div class="check-item"><input type="checkbox"> 緊急高熱量乾糧 (巧克力)</div>
-    <div class="check-item"><input type="checkbox"> 車輛檢查：Woo 115 胎紋 & 煞車調整</div>
+    <div class="check-item"><input type="checkbox"> 行動電源 + 下載離線地圖</div>
+    <div class="check-item"><input type="checkbox"> 緊急高熱量巧克力</div>
+    <div class="check-item"><input type="checkbox"> 檢查 Woo 115 煞車靈敏度</div>
 </div>
 
 <div class="section">
-    <h2>🖼️ 旅遊計畫概覽圖</h2>
+    <h2>旅遊計畫視覺概覽</h2>
     <img src="https://github.com/user-attachments/assets/a6503acc-6710-47db-b3d0-bf0c20b18883" alt="2026南橫計畫圖" class="trip-image">
 </div>
 
-<div class="footer-note">
-    <p>※ 溫馨提醒：初三車多，請保持安全車距並隨時注意山區天候變化。</p>
-</div>
-
-</body>
-</html>
+<footer>
+    <p>© 2026 南橫 100cc 熱血一日遊計畫 | 祝
