@@ -1,147 +1,87 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>彰化農場-全產品團購訂購單</title>
+    <title>2026 南橫 115cc 機車一日遊行程表</title>
     <style>
-        body { font-family: "Microsoft JhengHei", sans-serif; background-color: #f8fafc; padding: 20px; color: #334155; }
-        .container { max-width: 1000px; margin: auto; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #166534; margin-bottom: 5px; letter-spacing: 2px; }
-        .subtitle { text-align: center; color: #64748b; margin-bottom: 30px; }
-        
-        table { width: 100%; border-collapse: collapse; background: white; }
-        th { background-color: #f1f5f9; color: #1e293b; padding: 15px; border-bottom: 2px solid #cbd5e1; text-align: left; position: sticky; top: 0; z-index: 10; }
-        td { padding: 12px; border-bottom: 1px solid #f1f5f9; }
-        
-        .category-head { background-color: #ecfdf5; font-weight: bold; color: #065f46; border-left: 5px solid #10b981; }
-        .item-name { font-weight: 500; }
-        
-        input[type="number"] { width: 65px; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; text-align: center; font-size: 15px; }
-        input[type="number"]:focus { border-color: #10b981; outline: none; ring: 2px #10b981; }
-        
-        .price-cell { color: #64748b; font-size: 14px; }
-        .discount-price { color: #ef4444; font-weight: 700; font-size: 16px; }
-        .subtotal-cell { font-weight: 700; color: #059669; text-align: right; width: 120px; }
-        
-        .footer-total { margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #065f46 0%, #064e3b 100%); color: white; border-radius: 12px; text-align: right; position: sticky; bottom: 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); }
-        #grand-total { font-size: 32px; margin-left: 15px; border-bottom: 3px solid #34d399; }
-        
-        tr:hover { background-color: #f8fafc; }
-        .btn-submit { background-color: #10b981; color: white; border: none; padding: 15px 50px; border-radius: 50px; cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s; margin-top: 20px; }
-        .btn-submit:hover { background-color: #059669; transform: translateY(-2px); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 20px auto; padding: 0 10px; }
+        h2 { color: #2c3e50; border-left: 5px solid #27ae60; padding-left: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        th { background-color: #27ae60; color: white; text-align: left; padding: 12px; }
+        td { border: 1px solid #ddd; padding: 12px; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .time { font-weight: bold; color: #e67e22; white-space: nowrap; }
+        .location { font-weight: bold; color: #2980b9; }
+        .highlight { color: #c0392b; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>彰化農場 - 榮院專案團購單</h2>
-    <p class="subtitle">請填寫各項口味之訂購數量</p>
-    
+    <h2>🛵 2026/01/31 (初三) 南橫熱血行程表</h2>
+    <p><strong>交通工具：</strong> SYM Woo 115 (蘋果綠 / 白色後行李箱)</p>
+
     <table>
         <thead>
             <tr>
-                <th>品名 / 口味規格</th>
-                <th>售價</th>
-                <th>優惠價</th>
-                <th>訂購數量</th>
-                <th style="text-align: right;">小計</th>
+                <th>時間</th>
+                <th>地點</th>
+                <th>行程重點與美食</th>
             </tr>
         </thead>
-        <tbody id="order-list">
-            <tr class="category-head"><td colspan="5">核心熱銷 - 益生菌系列</td></tr>
-            <tr class="item-row"><td>鳳梨膠原三合一益生菌 (30入)</td><td class="price-cell">700</td><td class="discount-price" data-value="560">560</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>鳳梨膠原三合一益生菌 (5入)</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-
-            <tr class="category-head"><td colspan="5">肉鬆系列</td></tr>
-            <tr class="item-row"><td>榮光肉鬆 (原味)</td><td class="price-cell">260</td><td class="discount-price" data-value="208">208</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>榮光肉鬆 (海苔)</td><td class="price-cell">260</td><td class="discount-price" data-value="208">208</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>故宮聯名款肉鬆</td><td class="price-cell">188</td><td class="discount-price" data-value="169">169</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-
-            <tr class="category-head"><td colspan="5">桑葚系列</td></tr>
-            <tr class="item-row"><td>桑葚熬膏</td><td class="price-cell">350</td><td class="discount-price" data-value="280">280</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>桑葚熬果</td><td class="price-cell">350</td><td class="discount-price" data-value="280">280</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-
-            <tr class="category-head"><td colspan="5">瓶裝香料粉</td></tr>
-            <tr class="item-row"><td>馬告胡椒鹽</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>馬告玫瑰鹽</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>馬告粒 (可磨)</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-
-            <tr class="category-head"><td colspan="5">袋裝穀粉 (燕麥粉系列)</td></tr>
-            <tr class="item-row"><td>紅藜芝麻燕麥粉</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>紅藜堅果燕麥粉</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>紅藜可可燕麥粉</td><td class="price-cell">150</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-
-            <tr class="category-head"><td colspan="5">冷凍料理/即食包</td></tr>
-            <tr class="item-row"><td>四季榮好 - 花果茶</td><td class="price-cell">200</td><td class="discount-price" data-value="160">160</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>鹽炒花生</td><td class="price-cell">130</td><td class="discount-price" data-value="120">120</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>養生羊肉爐 (1000g)</td><td class="price-cell">500</td><td class="discount-price" data-value="400">400</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>麻辣燙 (1000g)</td><td class="price-cell">300</td><td class="discount-price" data-value="240">240</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>五更腸旺 (1000g)</td><td class="price-cell">360</td><td class="discount-price" data-value="288">288</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>紅燒牛肉 (815g)</td><td class="price-cell">300</td><td class="discount-price" data-value="240">240</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>紅燒牛肉 (300g)</td><td class="price-cell">120</td><td class="discount-price" data-value="96">96</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>紅燒豬肉 (300g)</td><td class="price-cell">110</td><td class="discount-price" data-value="88">88</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-
-            <tr class="category-head"><td colspan="5">袋裝果乾系列</td></tr>
-            <tr class="item-row"><td>蜜香洛神</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>珍珠芭樂乾</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>情人果乾</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>無籽紅肉李</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>脆梅</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>話梅</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>酵素梅</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>愛文芒果乾</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>蜜香檸檬乾</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
-            <tr class="item-row"><td>澄蜜番茄乾</td><td class="price-cell">100</td><td class="discount-price" data-value="80">80</td><td><input type="number" class="qty" min="0" value="0"></td><td class="subtotal-cell">$0</td></tr>
+        <tbody>
+            <tr>
+                <td class="time">06:00</td>
+                <td class="location">高雄榮總 (KVGH)</td>
+                <td>熱血出發！走台 22 線避開國 10 車潮。</td>
+            </tr>
+            <tr>
+                <td class="time">07:10</td>
+                <td class="location">甲仙區 (加油站)</td>
+                <td><span class="highlight">重要加油點</span>。享用芋頭早點，此時無需排隊。</td>
+            </tr>
+            <tr>
+                <td class="time">08:15</td>
+                <td class="location">寶來 / 荖濃</td>
+                <td>穩定巡航。山區氣溫開始下降，注意保暖。</td>
+            </tr>
+            <tr>
+                <td class="time">09:00</td>
+                <td class="location">梅山口管制站</td>
+                <td>第一批進場，避開後續遊覽車大軍。</td>
+            </tr>
+            <tr>
+                <td class="time">10:15</td>
+                <td class="location">中之關步道</td>
+                <td>漫步雲霧森林，享受清晨山林的芬多精。</td>
+            </tr>
+            <tr>
+                <td class="time">11:30</td>
+                <td class="location">埡口 (大關山隧道)</td>
+                <td>海拔 2722m 觀賞雲海。115cc 爬坡終點。</td>
+            </tr>
+            <tr>
+                <td class="time">12:30</td>
+                <td class="location">向陽遊樂區 (折返)</td>
+                <td>完成壯舉，準備回程。下坡務必注意煞車熱衰竭。</td>
+            </tr>
+            <tr>
+                <td class="time">13:30</td>
+                <td class="location">梅山部落用餐</td>
+                <td>品嚐<span class="highlight">原民烤肉</span>或熱湯，避開中午尖峰。</td>
+            </tr>
+            <tr>
+                <td class="time">15:00</td>
+                <td class="location">旗山老街</td>
+                <td>順訪老街，買伴手禮並稍作休息。</td>
+            </tr>
+            <tr>
+                <td class="time">17:00</td>
+                <td class="location">高雄榮總</td>
+                <td>平安抵達。總結行程與 Woo 115 絕佳戰績。</td>
+            </tr>
         </tbody>
     </table>
-
-    <div class="footer-total">
-        應付總金額 NT$ <span id="grand-total">0</span>
-    </div>
-
-    <div style="text-align: center; padding: 40px 0;">
-        <button onclick="handleOrder()" class="btn-submit">送出團購訂單</button>
-    </div>
-</div>
-
-<script>
-    const orderList = document.getElementById('order-list');
-    const grandTotalSpan = document.getElementById('grand-total');
-
-    // 監聽所有輸入框變動
-    orderList.addEventListener('input', function(e) {
-        if (e.target.classList.contains('qty')) {
-            calculateTotal();
-        }
-    });
-
-    function calculateTotal() {
-        let total = 0;
-        const rows = document.querySelectorAll('.item-row');
-
-        rows.forEach(row => {
-            const price = parseInt(row.querySelector('.discount-price').getAttribute('data-value'));
-            const qty = parseInt(row.querySelector('.qty').value) || 0;
-            const subtotal = price * qty;
-            
-            row.querySelector('.subtotal-cell').textContent = '$' + subtotal.toLocaleString();
-            total += subtotal;
-        });
-
-        grandTotalSpan.textContent = total.toLocaleString();
-    }
-
-    function handleOrder() {
-        const finalAmount = grandTotalSpan.textContent;
-        if (finalAmount === "0") {
-            alert("⚠️ 尚未選擇任何產品數量！");
-        } else {
-            alert("✅ 感謝訂購！您的訂單總金額為 NT$ " + finalAmount + "\n將為您彙整明細。");
-            // 這裡可以進階擴充將資料傳送到後端或 Email 的功能
-        }
-    }
-</script>
 
 </body>
 </html>
